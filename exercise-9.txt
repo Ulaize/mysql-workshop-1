@@ -1,0 +1,39 @@
+Create a data model representing a Barn with Chickens :hatching_chick:
+This model should provide answers to the following questions:
+How many rooster, hen and chicks existed in the Barn on a specific date
+How many chicks will come to age on a specific date
+
+
+mysql> CREATE DATABASE hatching_chick;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE hatching_chick;
+Database changed
+
+mysql> CREATE TABLE Chicken (id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );                                                                               
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ALTER TABLE Chicken ADD COLUMN birthDate DATETIME;                                                                          
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken ADD COLUMN sex ENUM('female','male');
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Chicken ADD COLUMN deadOrAlive ('born','dead');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('born','dead')' at line 1
+mysql> ALTER TABLE Chicken ADD COLUMN deadOrAlive ENUM('born','dead');
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Chicken;
++-------------+-----------------------+------+-----+---------+----------------+
+| Field       | Type                  | Null | Key | Default | Extra          |
++-------------+-----------------------+------+-----+---------+----------------+
+| id          | int(11)               | NO   | PRI | NULL    | auto_increment |
+| birthDate   | datetime              | YES  |     | NULL    |                |
+| sex         | enum('female','male') | YES  |     | NULL    |                |
+| deadOrAlive | enum('born','dead')   | YES  |     | NULL    |                |
++-------------+-----------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
