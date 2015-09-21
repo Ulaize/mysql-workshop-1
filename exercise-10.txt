@@ -1,0 +1,92 @@
+mysql> CREATE DATABASE hotel;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE hotel;
+Database changed
+mysql> CREATE TABLE Floor (id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );                                                                                 
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> ALTER TABLE Floor ADD COLUMN carpet TINYINT(1);                                                                             
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Floor ADD COLUMN noWindows INT;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Floor;
++-----------+------------+------+-----+---------+----------------+
+| Field     | Type       | Null | Key | Default | Extra          |
++-----------+------------+------+-----+---------+----------------+
+| id        | int(11)    | NO   | PRI | NULL    | auto_increment |
+| carpet    | tinyint(1) | YES  |     | NULL    |                |
+| noWindows | int(11)    | YES  |     | NULL    |                |
++-----------+------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE Room (id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );                                                                                  
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ALTER TABLE Room ADD COLUMN kitchen TINYINT(1);                                                                                                         
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN type ENUM('normal','janitor closets','public laundry room','gym');                                                      
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE Room (id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );                                                                                  
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ALTER TABLE Room ADD COLUMN kitchen TINYINT(1);                                                                                                         
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN type ENUM('normal','janitor closets','public laundry room','gym');                                                          
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE Reservation (id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );                                                                           
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> ALTER TABLE Reservation ADD COLUMN available TINYINT(1);                                                                                                
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Reservation ADD COLUMN threeOrMore TINYINT(1);                                                                                              
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Reservation ADD COLUMN date DATETIME;                                                                                                       
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Reservation DROP threeOrMore;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Room ADD COLUMN threeOrMore TINYINT(1);                                                                                                     
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> DESCRIBE Room;
++-------------+--------------------------------------------------------------+------+-----+---------+----------------+
+| Field       | Type                                                         | Null | Key | Default | Extra          |
++-------------+--------------------------------------------------------------+------+-----+---------+----------------+
+| id          | int(11)                                                      | NO   | PRI | NULL    | auto_increment |
+| kitchen     | tinyint(1)                                                   | YES  |     | NULL    |                |
+| type        | enum('normal','janitor closets','public laundry room','gym') | YES  |     | NULL    |                |
+| threeOrMore | tinyint(1)                                                   | YES  |     | NULL    |                |
++-------------+--------------------------------------------------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> DESCRIBE Reservation;
++-----------+------------+------+-----+---------+----------------+
+| Field     | Type       | Null | Key | Default | Extra          |
++-----------+------------+------+-----+---------+----------------+
+| id        | int(11)    | NO   | PRI | NULL    | auto_increment |
+| available | tinyint(1) | YES  |     | NULL    |                |
+| date      | datetime   | YES  |     | NULL    |                |
++-----------+------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
