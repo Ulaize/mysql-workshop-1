@@ -1,0 +1,80 @@
+Create table Account for database decodemtl_addressbook
+
+USE decodemtl_addressbook;
+
+CREATE TABLE Account(
+id int NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (id)
+);
+    
+mysql> DESCRIBE Account;
+
++-------+---------+------+-----+---------+----------------+
+| Field | Type    | Null | Key | Default | Extra          |
++-------+---------+------+-----+---------+----------------+
+| id    | int(11) | NO   | PRI | NULL    | auto_increment |
++-------+---------+------+-----+---------+----------------+
+1 row in set (0.00 sec)
+
+
+Create table AddressBook for database decodemtl_addressbook
+
+mysql> USE decodemtl_addressbook;
+Database changed
+CREATE TABLE AddressBook(
+id int NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (id)
+);
+
+Query OK, 0 rows affected (0.01 sec)
+    
+mysql> DESCRIBE AddressBook;
+
++-------+---------+------+-----+---------+----------------+
+| Field | Type    | Null | Key | Default | Extra          |
++-------+---------+------+-----+---------+----------------+
+| id    | int(11) | NO   | PRI | NULL    | auto_increment |
++-------+---------+------+-----+---------+----------------+
+1 row in set (0.00 sec)
+
+
+Create table Entry for database decodemtl_addressbook
+
+mysql> USE decodemtl_addressbook;
+Database changed
+mysql> CREATE TABLE Entry(
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DESCRIBE Entry;
++-------+---------+------+-----+---------+----------------+
+| Field | Type    | Null | Key | Default | Extra          |
++-------+---------+------+-----+---------+----------------+
+| id    | int(11) | NO   | PRI | NULL    | auto_increment |
++-------+---------+------+-----+---------+----------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+Create table Test for database decodemtl_addressbook
+
+mysql> USE decodemtl_addressbook;
+Database changed
+mysql> CREATE TABLE Test(
+    -> id int NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> DESCRIBE Test;
++-------+---------+------+-----+---------+----------------+
+| Field | Type    | Null | Key | Default | Extra          |
++-------+---------+------+-----+---------+----------------+
+| id    | int(11) | NO   | PRI | NULL    | auto_increment |
++-------+---------+------+-----+---------+----------------+
+1 row in set (0.00 sec)
+
